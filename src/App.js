@@ -4,8 +4,8 @@ import { Input, Textarea, Button, Box, Flex, Text } from '@chakra-ui/react'
 
 const MyComponent = () => {
   const [ isLoading, setIsLoading ] = useState(false)
-  const [prompt, setPrompt] = useState('ሰላም');
-  const [apiResult, setApiResult] = useState('something');
+  const [prompt, setPrompt] = useState('');
+  const [apiResult, setApiResult] = useState('');
 
   const handleButtonClick = async () => {
     try {
@@ -32,19 +32,19 @@ const MyComponent = () => {
 
   return (
     <Box as={Flex} flexDirection={'column'} textAlign={'center'} p={'20px'} gap={'2rem'} w={600}>
-      <Text fontSize='4xl'>Text Generation</Text>
+      <Text fontSize='4xl'>Machine Translation</Text>
       <label>
         <Input
-         placeholder='Enter Prompt' 
+         placeholder='Enter English input' 
          type="text"
          value={prompt}
          onChange={(e) => setPrompt(e.target.value)}
          />
       </label>
-      <Button disabled={isLoading} w={'50%'} mx={'auto'} bgColor={'blue'} color={'white'} onClick={handleButtonClick}>{isLoading ? 'Generating...':'Generate Text'}</Button>
+      <Button disabled={isLoading} w={'50%'} mx={'auto'} bgColor={'blue'} color={'white'} onClick={handleButtonClick}>{isLoading ? 'Translating...':'Translate Text'}</Button>
       {apiResult && (
         <div>
-          <Text fontSize='2xl'>Generated Text </Text>
+          <Text fontSize='2xl'>Amharic </Text>
           <Textarea mt={2} value={apiResult}  />
         </div>
       )}
