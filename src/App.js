@@ -2,22 +2,24 @@ import React, { useState } from 'react';
 import './App.css'; 
 import { Input, Textarea, Button, Box, Flex, Text } from '@chakra-ui/react'
 
+
 const MyComponent = () => {
   const [ isLoading, setIsLoading ] = useState(false)
   const [prompt, setPrompt] = useState('');
   const [apiResult, setApiResult] = useState('');
 
+  // console.log(config.MODEL_TOKEN)
   const handleButtonClick = async () => {
     try {
       setIsLoading(true)
-      const response = await fetch("https://api-inference.huggingface.co/models/kaleabstark/roberta_gen_v_1", {
+      const response = await fetch("https://api-inference.huggingface.co/models/gadisamenu/en_am", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",  // Set appropriate content type
-          "Authorization": `Bearer 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`  // Example header
+          "Authorization": `Bearer "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"`  // Example header
         },
         body: JSON.stringify({
-          inputs: prompt
+          inputs: "<am>"+prompt
         })
       })
       
