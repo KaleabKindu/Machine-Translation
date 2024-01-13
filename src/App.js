@@ -16,7 +16,7 @@ const MyComponent = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",  // Set appropriate content type
-          "Authorization": `Bearer "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"`  // Example header
+          "Authorization": `Bearer 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`  // Example header
         },
         body: JSON.stringify({
           inputs: "<am>"+prompt
